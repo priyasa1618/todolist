@@ -21,3 +21,16 @@ function addItem() {
         let li = button.parentElement;
         li.remove();
       }
+let todos = [];
+
+function addTodo(task){
+    todos.push(task);
+    localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+function loadTodos(){
+    let data = localStorage.getItem("todos");
+    if(data){
+        todos = JSON.parse(data);
+    }
+}
